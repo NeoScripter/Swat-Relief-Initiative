@@ -15,6 +15,7 @@ dist-ssr
 /storage/*.key
 /vendor
 public/storage/*
+public/tmp/*
 storage/private/*
 .env
 public/storage
