@@ -84,6 +84,10 @@
     h3 {
         @apply text-2xl font-medium text-primary md:text-3xl xl:text-4xl;
     }
+
+    p, a, button, li, :not(h1, h2, h3, h4, h5, h6) {
+        @apply tracking-wide;
+    }
 }
 
 .full-bleed-wrapper {
