@@ -1,44 +1,68 @@
-<div class="adaptive-img-blur overflow-clip bg-cover bg-center bg-no-repeat relative <?= $prtClass ?? '' ?>">
+<?php $uid = 'aimg-' . uniqid() ?>
+<div
+    id="<?= $uid ?>"
+    class="overflow-clip bg-cover bg-center bg-no-repeat relative <?= $prtClass ?? '' ?>">
+    <style>
+        #<?= $uid ?> {
+            background-image: <?= "url({$IMG_DIR}{$path}-mb-tiny.webp)" ?>;
+        }
+
+        <?php if (($avif ?? false) && str_contains($sizes, 'tb')): ?>
+            @media screen and (min-width: 31.25rem) {
+                #<?= $uid ?> {
+                    background-image: <?= "url({$IMG_DIR}{$path}-tb-tiny.webp)" ?>;
+                }
+            }
+        <?php endif ?>
+
+        <?php if (($avif ?? false) && str_contains($sizes, 'dk')): ?>
+            @media screen and (min-width: 64rem) {
+                #<?= $uid ?> {
+                    background-image: <?= "url({$IMG_DIR}{$path}-dk-tiny.webp)" ?>;
+                }
+            }
+        <?php endif ?>
+    </style>
+
     <picture>
         <?php if (($avif ?? false) && str_contains($sizes, 'dk')): ?>
             <source
                 type="image/avif"
                 srcset="<?= build_src_set($path, 'dk', 'avif') ?>"
-                media="(min-width: 64rem)"
-            />
+                media="(min-width: 64rem)" />
         <?php endif ?>
+
         <?php if (str_contains($sizes, 'dk')): ?>
             <source
                 type="image/webp"
                 srcset="<?= build_src_set($path, 'dk', 'webp') ?>"
-                media="(min-width: 64rem)"
-            />
+                media="(min-width: 64rem)" />
         <?php endif ?>
+
         <?php if (($avif ?? false) && str_contains($sizes, 'tb')): ?>
             <source
                 type="image/avif"
                 srcset="<?= build_src_set($path, 'tb', 'avif') ?>"
-                media="(min-width: 31.25rem)"
-            />
+                media="(min-width: 31.25rem)" />
         <?php endif ?>
+
         <?php if (str_contains($sizes, 'tb')): ?>
             <source
                 type="image/webp"
                 srcset="<?= build_src_set($path, 'tb', 'webp') ?>"
-                media="(min-width: 31.25rem)"
-            />
+                media="(min-width: 31.25rem)" />
         <?php endif ?>
+
         <?php if (($avif ?? false) && str_contains($sizes, 'mb')): ?>
             <source
                 type="image/avif"
-                srcset="<?= build_src_set($path, 'mb', 'avif') ?>"
-            />
+                srcset="<?= build_src_set($path, 'mb', 'avif') ?>" />
         <?php endif ?>
+
         <img
             srcset="<?= build_src_set($path, 'mb', 'webp') ?>"
             loading="lazy"
             alt="<?= $alt ?? '' ?>"
-            class="block size-full object-cover object-center <?= $imgClass ?? '' ?>"
-        />
+            class="block size-full object-cover object-center <?= $imgClass ?? '' ?>" />
     </picture>
 </div>

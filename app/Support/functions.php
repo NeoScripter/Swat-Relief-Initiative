@@ -32,10 +32,11 @@ function vite_tags(): string
 
 function build_src_set(string $path, string $size, string $ext): string
 {
+    $img_dir = \Base::instance()->IMG_DIR;
     $sources = [
-        ["/assets/imgs/{$path}-{$size}.{$ext}",     '1x'],
-        ["/assets/imgs/{$path}-{$size}2x.{$ext}",   '2x'],
-        ["/assets/imgs/{$path}-{$size}3x.{$ext}",   '3x'],
+        ["{$img_dir}{$path}-{$size}.{$ext}",     '1x'],
+        ["{$img_dir}{$path}-{$size}2x.{$ext}",   '2x'],
+        ["{$img_dir}{$path}-{$size}3x.{$ext}",   '3x'],
     ];
 
     return implode(
