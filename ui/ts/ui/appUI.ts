@@ -26,9 +26,15 @@ export class AppUI {
                 DOMHelpers.qs('.adaptive-overlay', frame).remove();
             };
 
+            const handleImgStartLoading = () => {
+                img.classList.add('opacity-0');
+                DOMHelpers.qs('.adaptive-overlay', frame).classList.remove('hidden');
+            };
+
             if (img.complete) {
                 handleImgLoad();
             } else {
+                handleImgStartLoading();
                 img.addEventListener('load', () => handleImgLoad());
             }
         });

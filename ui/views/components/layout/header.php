@@ -3,7 +3,8 @@
         'sizes'    => 'mb',
         'avif'     => true,
         'path'     => 'shared/logo',
-        'prtClass' => 'size-15 sm:size-25 xl:size-30'
+        'prtClass' => 'size-15 sm:size-25 xl:size-30',
+        'overlayClass' => 'rounded-full'
     ]) ?>
     <nav>
         <ol class="flex items-baseline gap-3 justify-center">

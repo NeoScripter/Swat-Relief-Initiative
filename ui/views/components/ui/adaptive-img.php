@@ -61,11 +61,11 @@
             srcset="<?= build_src_set($path, 'mb', 'webp') ?>"
             loading="lazy"
             alt="<?= $alt ?? '' ?>"
-            class="block opacity-0 transition-opacity duration-500 ease-in-out size-full object-cover object-center <?= $imgClass ?? '' ?>" />
+            class="block transition-opacity duration-500 ease-in-out size-full object-cover object-center <?= $imgClass ?? '' ?>" />
     </picture>
 
     <div
         aria-hidden="true"
-        class="animate-loading adaptive-overlay absolute inset-0 size-full bg-white/75"></div>
+        class="animate-loading adaptive-overlay hidden absolute inset-0 size-full bg-white/15 <?= $overlayClass ?? '' ?>"></div>
 
 </div>

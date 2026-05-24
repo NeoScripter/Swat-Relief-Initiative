@@ -1,3 +1,3 @@
 <section class="app-section">
-    Hello from the history page
+    <h2>History of <span class="text-accent">Swat & SRI</span></h2>
 </section>
