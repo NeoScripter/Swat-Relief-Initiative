@@ -15,6 +15,9 @@ importers:
         specifier: ^4.3.0
         version: 4.3.0
     devDependencies:
+      tailwindcss-content-visibility:
+        specifier: ^1.0.2
+        version: 1.0.2(tailwindcss@4.3.0)
       typescript:
         specifier: ~6.0.2
         version: 6.0.3
@@ -384,6 +387,11 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
+  tailwindcss-content-visibility@1.0.2:
+    resolution: {integrity: sha512-Sch6hzEstDxFIDdMrI7tdUhYCUiFLS9FjJM5RfMFbRt5y0q24UwaXRGNvepoAzoHj60IqAwoysN+274XFzT01A==}
+    peerDependencies:
+      tailwindcss: ^3.0.0
+
   tailwindcss@4.3.0:
     resolution: {integrity: sha512-y6nxMGB1nMW9R6k96e5gdIFzcfL/gTJRNaqGes1YvkLnPVXzWgbqFF2yLC0T8G774n24cx3Pe8XrKoniCOAH+Q==}
 
@@ -721,6 +729,10 @@ snapshots:
       '@rolldown/binding-win32-x64-msvc': 1.0.2
 
   source-map-js@1.2.1: {}
+
+  tailwindcss-content-visibility@1.0.2(tailwindcss@4.3.0):
+    dependencies:
+      tailwindcss: 4.3.0
 
   tailwindcss@4.3.0: {}
 

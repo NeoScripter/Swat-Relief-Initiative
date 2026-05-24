@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin 'tailwindcss-content-visibility';
 
 @theme {
     --font-sans:
@@ -43,4 +44,54 @@
             opacity: 0.1;
         }
     }
+}
+
+@layer base {
+    button {
+        @apply cursor-pointer;
+    }
+
+    body {
+        @apply md:text-lg xl:text-xl;
+    }
+
+    .app-section {
+        @apply py-16 content-visibility-auto md:py-20 xl:py-25;
+    }
+}
+
+:root {
+    --px: 1rem;
+
+    /* sm */
+    @media screen and (min-width: 40rem) {
+        --px: 4rem;
+    }
+    /* xl */
+    @media screen and (min-width: 80rem) {
+        --px: 8rem;
+    }
+}
+
+.full-bleed-wrapper {
+    display: grid;
+    grid-template-columns:
+        1fr
+        calc(100% - (var(--px) * 2))
+        1fr;
+
+    /* lg */
+}
+
+.full-bleed-wrapper > * {
+    grid-column: 2;
+}
+
+.full-bleed {
+    width: 100%;
+    grid-column: 1 / 4;
+}
+
+.full-bleed-padding > *:not(.full-bleed) {
+    margin-inline: var(--padding);
 }

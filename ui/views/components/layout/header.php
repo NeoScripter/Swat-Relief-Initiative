@@ -1,9 +1,9 @@
-<header class="bg-nav-background text-white">
+<header class="bg-nav-background text-white px-(--px) pt-3 flex items-center justify-between">
     <?= component('ui/adaptive-img', [
         'sizes'    => 'mb',
         'avif'     => true,
         'path'     => 'shared/logo',
-        'prtClass' => 'size-10'
+        'prtClass' => 'size-15 sm:size-25 xl:size-30'
     ]) ?>
     <nav>
         <ol class="flex items-baseline gap-3 justify-center">

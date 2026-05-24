@@ -9,6 +9,7 @@ class HomeController
     public function index($f3)
     {
         $f3->set('inc', 'pages/home');
+        $f3->set('heading', 'home');
         echo view('layouts/user-layout');
     }
 }

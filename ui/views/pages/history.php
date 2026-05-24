@@ -1,3 +1,3 @@
-<div>
+<section class="app-section">
     Hello from the history page
-</div>
+</section>
