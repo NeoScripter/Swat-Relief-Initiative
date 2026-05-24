@@ -1,26 +1,24 @@
 <?php $uid = 'aimg-' . uniqid() ?>
 <div
     id="<?= $uid ?>"
-    class="overflow-clip bg-cover bg-center bg-no-repeat relative <?= $prtClass ?? '' ?>">
+    class="overflow-clip adaptive-img bg-cover bg-center bg-no-repeat relative <?= $prtClass ?? '' ?>">
     <style>
         #<?= $uid ?> {
             background-image: <?= "url({$IMG_DIR}{$path}-mb-tiny.webp)" ?>;
         }
 
-        <?php if (($avif ?? false) && str_contains($sizes, 'tb')): ?>
-            @media screen and (min-width: 31.25rem) {
-                #<?= $uid ?> {
-                    background-image: <?= "url({$IMG_DIR}{$path}-tb-tiny.webp)" ?>;
-                }
+        <?php if (($avif ?? false) && str_contains($sizes, 'tb')): ?>@media screen and (min-width: 31.25rem) {
+            #<?= $uid ?> {
+                background-image: <?= "url({$IMG_DIR}{$path}-tb-tiny.webp)" ?>;
             }
-        <?php endif ?>
+        }
 
-        <?php if (($avif ?? false) && str_contains($sizes, 'dk')): ?>
-            @media screen and (min-width: 64rem) {
-                #<?= $uid ?> {
-                    background-image: <?= "url({$IMG_DIR}{$path}-dk-tiny.webp)" ?>;
-                }
+        <?php endif ?><?php if (($avif ?? false) && str_contains($sizes, 'dk')): ?>@media screen and (min-width: 64rem) {
+            #<?= $uid ?> {
+                background-image: <?= "url({$IMG_DIR}{$path}-dk-tiny.webp)" ?>;
             }
+        }
+
         <?php endif ?>
     </style>
 
@@ -63,6 +61,11 @@
             srcset="<?= build_src_set($path, 'mb', 'webp') ?>"
             loading="lazy"
             alt="<?= $alt ?? '' ?>"
-            class="block size-full object-cover object-center <?= $imgClass ?? '' ?>" />
+            class="block opacity-0 transition-opacity duration-500 ease-in-out size-full object-cover object-center <?= $imgClass ?? '' ?>" />
     </picture>
+
+    <div
+        aria-hidden="true"
+        class="animate-loading adaptive-overlay absolute inset-0 size-full bg-white/75"></div>
+
 </div>

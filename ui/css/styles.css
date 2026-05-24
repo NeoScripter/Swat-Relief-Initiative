@@ -36,4 +36,11 @@
     /* --color-border: var(--border); */
     /* --color-input: var(--input); */
     /* --color-ring: var(--ring); */
+
+    --animate-loading: loading 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    @keyframes loading {
+        50% {
+            opacity: 0.1;
+        }
+    }
 }
