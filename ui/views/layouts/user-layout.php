@@ -9,14 +9,15 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
-        {{ vite_tags() }}
-        <title>{{ @title ?? @app_name }}</title>
+        <?= vite_tags() ?>
+        <title><?= $title ?? $app_name ?></title>
     </head>
     <body class="overflow-x-clip min-h-screen font-sans">
-        <include href="components/layout/header.htm" />
+            <?= component('layout/header') ?>
         <main>
-            <include href="{{ @inc }}" />
+            <?= view($inc) ?>
         </main>
-        <include href="components/layout/footer.htm" />
+            <?= component('layout/footer') ?>
     </body>
 </html>
+

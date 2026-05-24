@@ -29,3 +29,43 @@ function vite_tags(): string
         $css ? "<link rel='stylesheet' href='/dist/assets/" . basename($css) . "'>"         : '',
     ])) . PHP_EOL;
 }
+
+function build_src_set(string $path, string $size, string $ext): string
+{
+    $sources = [
+        ["/assets/imgs/{$path}-{$size}.{$ext}",     '1x'],
+        ["/assets/imgs/{$path}-{$size}2x.{$ext}",   '2x'],
+        ["/assets/imgs/{$path}-{$size}3x.{$ext}",   '3x'],
+    ];
+
+    return implode(
+        ', ',
+        array_map(
+            fn($s) => "{$s[0]} {$s[1]}",
+            array_filter($sources, fn($s) => !empty($s[0]))
+        )
+    );
+}
+
+function component(string $path, array $props = []): string
+{
+    $f3 = \Base::instance();
+
+    foreach ($props as $key => $val) {
+        $f3->set($key, $val);
+    }
+
+    $view = view("/components/{$path}");
+
+    foreach ($props as $key => $_) {
+        $f3->clear($key);
+    }
+
+    return $view;
+}
+
+function view(string $name): string
+{
+    return View::instance()->render("{$name}.php");
+}
+

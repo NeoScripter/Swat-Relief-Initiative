@@ -8,7 +8,7 @@ class HomeController
 {
     public function index($f3)
     {
-        $f3->set('inc', 'pages/home.htm');
-        echo \Template::instance()->render('layouts/public.htm');
+        $f3->set('inc', 'pages/home');
+        echo view('layouts/user-layout');
     }
 }
