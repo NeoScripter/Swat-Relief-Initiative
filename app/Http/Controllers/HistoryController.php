@@ -10,6 +10,11 @@ class HistoryController
     {
         $f3->set('inc', 'pages/history');
         $f3->set('heading', 'history');
+
+        $items = include_once(APP_DIR . '/ui/data/history.php');
+
+        $f3->set('HISTORY_ITEMS', $items);
+
         echo view('layouts/user-layout');
     }
 }

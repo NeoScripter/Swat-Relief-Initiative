@@ -47,6 +47,23 @@
     }
 }
 
+:root {
+    --px: 1rem;
+    --py: 4rem;
+
+    /* md */
+    @media screen and (min-width: 48rem) {
+        --px: 4rem;
+        --py: 5rem;
+    }
+    /* xl */
+    @media screen and (min-width: 80rem) {
+        --px: 8rem;
+        --py: 7.25rem;
+    }
+}
+
+
 @layer base {
     button {
         @apply cursor-pointer;
@@ -57,24 +74,15 @@
     }
 
     .app-section {
-        @apply py-16 content-visibility-auto md:py-20 xl:py-25;
+        @apply py-(--py) content-visibility-auto;
     }
 
     h2 {
         @apply text-3xl font-medium text-center text-primary md:text-4xl xl:text-5xl;
     }
-}
 
-:root {
-    --px: 1rem;
-
-    /* sm */
-    @media screen and (min-width: 40rem) {
-        --px: 4rem;
-    }
-    /* xl */
-    @media screen and (min-width: 80rem) {
-        --px: 8rem;
+    h3 {
+        @apply text-2xl font-medium text-primary md:text-3xl xl:text-4xl;
     }
 }
 
@@ -84,8 +92,6 @@
         1fr
         calc(100% - (var(--px) * 2))
         1fr;
-
-    /* lg */
 }
 
 .full-bleed-wrapper > * {

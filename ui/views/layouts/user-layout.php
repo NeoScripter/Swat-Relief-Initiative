@@ -12,7 +12,7 @@
     <title><?= $title ?? $app_name ?></title>
 </head>
 
-<body class="overflow-x-clip min-h-screen font-sans">
+<body class="overflow-x-clip min-h-screen font-sans max-w-480 mx-auto">
     <?= component('layout/header') ?>
     <main class="full-bleed-wrapper">
         <?= isset($heading) ? component('layout/hero') : '' ?>
