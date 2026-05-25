@@ -2,7 +2,7 @@
     <?= component('ui/adaptive-img', [
         'sizes'    => 'mb',
         'avif'     => true,
-        'path'     => 'shared/logo',
+        'path'     => 'shared/logo/logo',
         'prtClass' => 'size-15 sm:size-25 xl:size-30',
         'overlayClass' => 'rounded-full'
     ]) ?>

@@ -29,3 +29,14 @@
     </ul>
 
 </section>
+
+<section class="full-bleed relative grid place-content-center bg-gray-400/50 min-h-100 md:min-h-110 xl:min-h-120">
+
+    <?= component('ui/bg-video', [
+        'src' => 'history',
+        'prtClass' => 'absolute inset-0 size-full'
+    ]) ?>
+
+    <p class="z-100 text-white isolate mx-auto px-(--px) max-w-[90ch] text-lg md:text-xl xl:text-2xl text-balance">Swat is home to stunning landscapes, snow-capped mountains, gushing streams, fruit-laden orchards and its hospitable, peace-loving people. In a 1961 hunting trip to the region, Queen Elizabeth called Swat “the Switzerland of the East”.</p>
+
+</section>

@@ -13,7 +13,9 @@
                                 <?php foreach ($item['links'] as $link): ?>
                                     <li class="text-balance">
                                         <?php if (isset($link['url'])) : ?>
-                                            <a class="hover:underline underline-offset-4" href="<?= $link['url'] ?>"><?= $link['label'] ?></a>
+                                            <a class="hover:underline underline-offset-4" href="<?= $link['url'] ?>">
+                                                <?= $link['label'] ?>
+                                            </a>
                                         <?php else: ?>
                                             <?= $link['label'] ?>
                                         <?php endif; ?>
@@ -26,7 +28,8 @@
             </ul>
         </div>
     <?php endif; ?>
-    <section class="app-section text-gray-50 bg-neutral-900 px-(--px) py-[calc(var(--py)/2)]">
-        <p>Copyright © Swat Relief Initiative, Inc. 2022</p>
+
+    <section class="app-section text-gray-50 text-balance bg-neutral-900 px-(--px) py-[calc(var(--py)/2)]">
+        <p>Copyright © Swat Relief Initiative, Inc. <?= date('Y') ?></p>
     </section>
 </footer>

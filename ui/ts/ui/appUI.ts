@@ -13,6 +13,7 @@ export class AppUI {
     private initElements() {
         return {
             adaptiveImgs: DOMHelpers.qsa<HTMLDivElement>('.adaptive-img'),
+            lazyVideos: DOMHelpers.qsa<HTMLVideoElement>('video[data-lazy]'),
         };
     }
 
@@ -28,7 +29,9 @@ export class AppUI {
 
             const handleImgStartLoading = () => {
                 img.classList.add('opacity-0');
-                DOMHelpers.qs('.adaptive-overlay', frame).classList.remove('hidden');
+                DOMHelpers.qs('.adaptive-overlay', frame).classList.remove(
+                    'hidden'
+                );
             };
 
             if (img.complete) {
@@ -37,6 +40,33 @@ export class AppUI {
                 handleImgStartLoading();
                 img.addEventListener('load', () => handleImgLoad());
             }
+        });
+
+        this.elements.lazyVideos.forEach((video) => {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+
+                        video
+                            .querySelectorAll('source[data-src]')
+                            .forEach((source) => {
+                                const dataSrc = source.getAttribute('data-src');
+
+                                if (dataSrc) {
+                                    source.setAttribute('src', dataSrc);
+                                    source.removeAttribute('data-src');
+                                }
+                            });
+
+                        video.load();
+                        observer.disconnect();
+                    });
+                },
+                { rootMargin: '200px' }
+            ); 
+
+            observer.observe(video);
         });
     }
 }
