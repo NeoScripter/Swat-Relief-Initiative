@@ -14,7 +14,11 @@ export class AppUI {
         return {
             adaptiveImgs: DOMHelpers.qsa<HTMLDivElement>('.adaptive-img'),
             lazyVideos: DOMHelpers.qsa<HTMLVideoElement>('video[data-lazy]'),
-            navPopup: DOMHelpers.getElementById<HTMLDivElement>('nav-popup'),
+            navPopup: DOMHelpers.getElementById<HTMLDialogElement>('nav-popup'),
+            openNavMenuBtn:
+                DOMHelpers.getElementById<HTMLDivElement>('open-nav-menu-btn'),
+            closeNavMenuBtn:
+                DOMHelpers.getElementById<HTMLDivElement>('close-nav-menu-btn'),
         };
     }
 
@@ -26,6 +30,20 @@ export class AppUI {
         this.elements.lazyVideos.forEach((video) =>
             this.deferVideoLoading(video)
         );
+
+        this.elements.openNavMenuBtn.addEventListener('click', () => {
+            this.elements.navPopup.showModal();
+        });
+
+        this.elements.closeNavMenuBtn.addEventListener('click', () => {
+            this.elements.navPopup.close();
+        });
+
+        this.elements.navPopup.addEventListener('click', (e) => {
+            if (e.target === this.elements.navPopup) {
+                this.elements.navPopup.close();
+            }
+        });
     }
 
     private deferVideoLoading(video: HTMLVideoElement) {

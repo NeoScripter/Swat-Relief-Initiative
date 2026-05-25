@@ -6,20 +6,10 @@
         'prtClass' => 'size-15 sm:size-25 xl:size-30',
         'overlayClass' => 'rounded-full'
     ]) ?>
-    <nav>
-        <ol class="flex items-baseline gap-3 md:gap-5 xl:gap-7 justify-center">
-            <?= component('layout/nav-link', [
-                'url'    => '/',
-                'label'     => 'Home',
-            ]) ?>
-            <?= component('layout/nav-link', [
-                'url'    => '/history',
-                'label'     => 'History',
-            ]) ?>
-            <?= component('layout/nav-link', [
-                'url'    => '/donate',
-                'label'     => 'Donate',
-            ]) ?>
-        </ol>
-    </nav>
+    <?= component('layout/burger-menu', [
+        'class'    => 'md:hidden',
+    ]) ?>
+    <?= component('layout/nav-menu', [
+        'class' => 'hidden md:block'
+    ]) ?>
 </header>
