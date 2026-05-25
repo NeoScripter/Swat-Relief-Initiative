@@ -27,7 +27,6 @@
             <?php endforeach; ?>
         <?php endif; ?>
     </ul>
-
 </section>
 
 <section class="full-bleed relative grid place-content-center bg-gray-400/50 min-h-100 md:min-h-110 xl:min-h-120">
