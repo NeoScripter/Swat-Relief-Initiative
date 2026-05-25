@@ -21,7 +21,7 @@
                         'avif'     => true,
                         'path'     => "history/history-{$idx}",
                         'prtClass' => 'w-full max-w-sm h-100 rounded-lg md:basis-1/3 shrink-0 md:h-90',
-                        'imgClass' => 'lg:group-[:nth-of-type(2)]:object-contain md:group-[:nth-of-type(8)]:object-contain group-[:nth-of-type(7)]:object-contain'
+                        'imgClass' => 'lg:group-[:nth-of-type(2)]:object-contain group-[:nth-of-type(8)]:object-contain group-[:nth-of-type(7)]:object-contain'
                     ]) ?>
                 </li>
             <?php endforeach; ?>
