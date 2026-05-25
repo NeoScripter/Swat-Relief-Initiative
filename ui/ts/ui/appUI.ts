@@ -14,51 +14,60 @@ export class AppUI {
         return {
             adaptiveImgs: DOMHelpers.qsa<HTMLDivElement>('.adaptive-img'),
             lazyVideos: DOMHelpers.qsa<HTMLVideoElement>('video[data-lazy]'),
+            navPopup: DOMHelpers.getElementById<HTMLDivElement>('nav-popup'),
         };
     }
 
     private bindEvents(): void {
-        this.elements.adaptiveImgs.forEach((frame) => {
-            const img = DOMHelpers.qs<HTMLImageElement>('img', frame);
+        this.elements.adaptiveImgs.forEach((container) =>
+            this.handleImageLoaded(container)
+        );
 
-            const handleImgLoad = () => {
-                frame.style.backgroundImage = 'none';
-                img.classList.remove('opacity-0');
-                DOMHelpers.qs('.adaptive-overlay', frame).remove();
-            };
+        this.elements.lazyVideos.forEach((video) =>
+            this.deferVideoLoading(video)
+        );
+    }
 
-            if (img.complete) {
-                handleImgLoad();
-            } else {
-                img.addEventListener('load', () => handleImgLoad());
-            }
-        });
+    private deferVideoLoading(video: HTMLVideoElement) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
 
-        this.elements.lazyVideos.forEach((video) => {
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (!entry.isIntersecting) return;
+                    video
+                        .querySelectorAll('source[data-src]')
+                        .forEach((source) => {
+                            const dataSrc = source.getAttribute('data-src');
 
-                        video
-                            .querySelectorAll('source[data-src]')
-                            .forEach((source) => {
-                                const dataSrc = source.getAttribute('data-src');
+                            if (dataSrc) {
+                                source.setAttribute('src', dataSrc);
+                                source.removeAttribute('data-src');
+                            }
+                        });
 
-                                if (dataSrc) {
-                                    source.setAttribute('src', dataSrc);
-                                    source.removeAttribute('data-src');
-                                }
-                            });
+                    video.load();
+                    observer.disconnect();
+                });
+            },
+            { rootMargin: '200px' }
+        );
 
-                        video.load();
-                        observer.disconnect();
-                    });
-                },
-                { rootMargin: '200px' }
-            ); 
+        observer.observe(video);
+    }
 
-            observer.observe(video);
-        });
+    private handleImageLoaded(container: HTMLDivElement) {
+        const img = DOMHelpers.qs<HTMLImageElement>('img', container);
+
+        const handleImgLoad = () => {
+            container.style.backgroundImage = 'none';
+            img.classList.remove('opacity-0');
+            DOMHelpers.qs('.adaptive-overlay', container).remove();
+        };
+
+        if (img.complete) {
+            handleImgLoad();
+        } else {
+            img.addEventListener('load', () => handleImgLoad());
+        }
     }
 }

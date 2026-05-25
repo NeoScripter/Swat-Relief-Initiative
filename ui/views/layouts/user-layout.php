@@ -20,6 +20,7 @@
         <?= view($inc) ?>
     </main>
     <?= component('layout/footer') ?>
+    <?= component('layout/nav-popup') ?>
 </body>
 
 </html>
