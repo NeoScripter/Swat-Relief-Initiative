@@ -1,4 +1,4 @@
-<header class="bg-nav-background text-white px-(--px) pt-3 flex items-center justify-between">
+<header class="bg-nav text-white px-(--px) pt-3 flex items-center justify-between">
     <?= component('ui/adaptive-img', [
         'sizes'    => 'mb',
         'avif'     => true,
@@ -15,6 +15,10 @@
             <?= component('layout/nav-link', [
                 'url'    => '/history',
                 'label'     => 'History',
+            ]) ?>
+            <?= component('layout/nav-link', [
+                'url'    => '/donate',
+                'label'     => 'Donate',
             ]) ?>
         </ol>
     </nav>

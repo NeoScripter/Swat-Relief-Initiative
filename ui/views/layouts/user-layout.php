@@ -16,6 +16,7 @@
     <?= component('layout/header') ?>
     <main class="full-bleed-wrapper">
         <?= isset($heading) ? component('layout/hero') : '' ?>
+        <?= ($SHOW_BANNER ?? false) ? component('ui/banner') : '' ?>
         <?= view($inc) ?>
     </main>
     <?= component('layout/footer') ?>
