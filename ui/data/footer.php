@@ -3,28 +3,28 @@
 return [
     [
         'title' => 'Social',
-        'items' => [
+        'links' => [
             [
                 'label' => "Facebook",
-                'url' => ""
+                'url' => "https://www.facebook.com/SwatReliefInitiative/"
             ],
             [
                 'label' => "X",
-                'url' => ""
+                'url' => "https://x.com/SwatReliefInit"
             ],
             [
                 'label' => "YouTube",
-                'url' => ""
+                'url' => "https://www.youtube.com/channel/UCJ4aA38dQNQDDrOSv8hIIEQ"
             ],
             [
                 'label' => "Instagram",
-                'url' => ""
+                'url' => "https://www.instagram.com/swatreliefinitiative/"
             ]
         ]
     ],
     [
         'title' => 'Contact us',
-        'items' => [
+        'links' => [
             [
                 'label' => "Email: zebu@swatreliefinitiative.org",
                 'url' => "mailto:zebu@swatreliefinitiative.org"
@@ -39,8 +39,8 @@ return [
         ]
     ],
     [
-        'title' => 'Swat Relief Initiative (SRI)',
-        'items' => [
+        'title' => 'Swat Relief Initiative',
+        'links' => [
             [
                 'label' => "Swat Relief Initiative is registered in the United States as a 501(c)(3) tax-exempt charitable organization, and in Pakistan as a non-profit organization under the Voluntary Social Welfare Agencies Ordinance."
             ]
