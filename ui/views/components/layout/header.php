@@ -7,7 +7,7 @@
         'overlayClass' => 'rounded-full'
     ]) ?>
     <nav>
-        <ol class="flex items-baseline gap-3 justify-center">
+        <ol class="flex items-baseline gap-3 md:gap-5 xl:gap-7 justify-center">
             <?= component('layout/nav-link', [
                 'url'    => '/',
                 'label'     => 'Home',

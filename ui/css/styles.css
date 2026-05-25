@@ -82,7 +82,7 @@
     }
 
     h2 {
-        @apply text-3xl font-medium text-center text-primary md:text-4xl xl:text-5xl;
+        @apply text-3xl font-semibold text-center text-primary md:text-4xl xl:text-5xl;
     }
 
     h3 {

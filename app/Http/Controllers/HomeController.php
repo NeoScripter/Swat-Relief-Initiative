@@ -10,7 +10,7 @@ class HomeController
     {
         $f3->set('inc', 'pages/home');
         $f3->set('SHOW_BANNER', true);
-        $f3->set('heading', 'Swat Relief Initiative');
+        $f3->set('heading', 'SRI');
         echo view('layouts/user-layout');
     }
 }
