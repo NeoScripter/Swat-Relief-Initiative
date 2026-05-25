@@ -1,4 +1,4 @@
-<div class="bg-nav text-gray-50 full-bleed sm:justify-around md:sticky md:top-0 md:z-1000 py-6 xl:py-8 border-t border-gray-50/30 px-(--px) flex flex-col sm:flex-row gap-8">
+<div class="bg-nav text-gray-50 full-bleed sm:justify-around md:z-1000 py-6 xl:py-8 border-t border-gray-50/30 px-(--px) flex flex-col sm:flex-row gap-8">
     <div class="mx-auto lg:max-w-[85ch] text-balance uppercase">
         <p>
             100% of donations go directly toward programs for disadvantaged communities.
