@@ -66,6 +66,6 @@
 
     <div
         aria-hidden="true"
-        class="animate-loading adaptive-overlay hidden absolute inset-0 size-full bg-white/15 <?= $overlayClass ?? '' ?>"></div>
+        class="animate-loading adaptive-overlay absolute inset-0 size-full bg-white/15 <?= $overlayClass ?? '' ?>"></div>
 
 </div>

@@ -9,7 +9,7 @@ export class DOMHelpers {
 
     static qsa<T extends Element>(selector: string, parent: Element | Document = document): NodeListOf<T> {
         const elements = parent.querySelectorAll<T>(selector);
-        if (elements.length === 0) {
+        if (!elements) {
             throw new Error(`Could not find elements with '${selector}' selector`);
         }
         return elements;
