@@ -1,5 +1,5 @@
 <nav class="<?= $class ?? '' ?>">
-    <ol class="flex flex-col md:flex-row md:items-baseline text-lg gap-4 md:gap-5 xl:gap-7 justify-center">
+    <ol class="flex flex-col md:flex-row md:items-baseline text-lg gap-4 md:gap-6 xl:gap-7 justify-center">
         <?= component('layout/nav-link', [
             'url'    => '/',
             'label'     => 'Home',

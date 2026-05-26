@@ -7,7 +7,7 @@
         'overlayClass' => 'rounded-full'
     ]) ?>
     <?= component('layout/burger-menu', [
-        'class'    => 'md:hidden',
+        'class'    => 'md:hidden mr-2 sm:size-12 sm:mr-4',
     ]) ?>
     <?= component('layout/nav-menu', [
         'class' => 'hidden md:block'
