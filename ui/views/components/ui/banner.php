@@ -7,7 +7,10 @@
     </div>
 
     <div class="self-center">
-        <a href="/donate" class="flex items-center w-fit mx-auto py-[1em] transition-colors focus-visible:bg-green-700 hover:bg-green-700 px-[2em] bg-primary uppercase tracking-widest font-bold rounded-full leading-[1em]">
+        <!-- <a href="/donate" class="flex items-center w-fit mx-auto py-[1em] transition-colors focus-visible:bg-green-700 hover:bg-green-700 px-[2em] bg-primary uppercase tracking-widest font-bold rounded-full leading-[1em]"> -->
+        <!--     donate -->
+        <!-- </a> -->
+        <a href="/donate" class="gradient-button uppercase tracking-widest font-bold leading-[1em]">
             donate
         </a>
     </div>
