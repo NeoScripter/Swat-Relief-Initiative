@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 @plugin 'tailwindcss-content-visibility';
 
+@view-transition {
+    navigation: auto;
+}
+
 @theme {
     --font-sans:
         ui-sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif,
