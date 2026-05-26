@@ -27,10 +27,12 @@ $options = [
             'title'     => 'Check',
             'description'     => "Please make your check payable to “Swat Relief Initiative” and send it to the following address: Swat Relief Initiative, P.O. Box 860, Pennington,  NJ 08534",
         ]) ?>
+
         <?= component('ui/info-tile', [
             'title'     => 'Online',
             'description'     => "You can donate online via PayPal",
         ]) ?>
+
         <div class="grid md:grid-cols-2 gap-[calc(var(--py)/2)] text-balance">
             <div>
                 <?= component('ui/info-tile', [
@@ -104,6 +106,32 @@ $options = [
                     </div>
                 </div>
             </div>
+        </div>
+
+        <?php
+        $details = [
+            ['label' => 'Bank Name', 'content' => 'National Bank of Pakistan'],
+            ['label' => 'Title of Account', 'content' => 'Swat Relief Initiative'],
+            ['label' => 'Account Number', 'content' => '4044999866'],
+            ['label' => 'Bank Address', 'content' => 'Main Branch (opposite Grassy Ground), Saidu Sharif, Swat'],
+            ['label' => 'Phone No', 'content' => '0946 9240028, 0946 9240033 or 0946 9240072'],
+            ['label' => 'Fax', 'content' => '0946 9240029'],
+            ['label' => 'Internal Branch Code', 'content' => '1330'],
+            ['label' => 'Swift Code', 'content' => 'NBPAPKKAA02P']
+        ];
+        ?>
+
+        <div class="space-y-4 md:space-y-6 xl:space-y-10">
+            <h3 class="">From Pakistan</h3>
+            <p class="text-gray-800 text-balance">Please wire or transfer via ATM or use internet banking to make your donation to our account (details below) and remember to send a note to <strong>Zebu@SwatReliefInitiative.org</strong> with your <strong>donation amount</strong>, your <strong>name</strong> and <strong>contact info</strong>, so we can credit your donation correctly:</p>
+            <ul class="space-y-2 xl:space-y-3">
+                <?php foreach ($details as $detail) : ?>
+                    <li>
+                        <strong><?= $detail['label'] ?></strong>: <span><?= $detail['content'] ?></span>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+
         </div>
     </div>
 </section>
