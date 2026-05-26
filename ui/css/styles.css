@@ -253,7 +253,7 @@
 
 .gradient-button {
     --button-fill-hover: oklch(0.18 0.08 262);
-    padding: 0.5lh 4ch;
+    padding: 0.65lh 4ch;
     border-radius: 100vw;
     border: 5px solid transparent;
     transition:
