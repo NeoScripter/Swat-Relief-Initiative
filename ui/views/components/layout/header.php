@@ -1,9 +1,9 @@
-<header class="bg-nav text-white px-(--px) pt-3 flex items-center justify-between">
+<header class="bg-nav text-white px-(--px) pt-3 flex items-center gap-4 md:gap-6 lg:gap-8 xl:gap-10 justify-between">
     <?= component('ui/adaptive-img', [
         'sizes'    => 'mb',
         'avif'     => true,
         'path'     => 'shared/logo/logo',
-        'prtClass' => 'size-15 sm:size-25 xl:size-30',
+        'prtClass' => 'size-15 sm:size-25 xl:size-30 shrink-0',
         'overlayClass' => 'rounded-full'
     ]) ?>
     <?= component('layout/burger-menu', [

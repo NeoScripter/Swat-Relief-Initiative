@@ -29,3 +29,27 @@
         <?php endif; ?>
     </div>
 </section>
+
+
+<section class="full-bleed relative grid place-content-center bg-gray-400/50 h-100 md:h-110 xl:h-120">
+
+    <div class="absolute size-full inset-0">
+
+        <?= component('ui/adaptive-img', [
+            'sizes'    => 'mb|tb|dk',
+            'avif'     => true,
+            'path'     => "volunteers/volunteers",
+            'prtClass' => 'absolute inset-0 size-full',
+            'imgClass' => 'object-center',
+        ]) ?>
+
+        <div class="absolute bg-black/25 inset-0">
+        </div>
+    </div>
+
+    <div class="z-100 text-white isolate mx-auto px-(--px) max-w-[90ch] xl:max-w-280 text-lg md:text-xl xl:text-2xl text-balance xl:text-wrap">
+        <h2 class="mb-[1lh] text-left text-white">Do you want to be a volunteer?</h2>
+        <p>Spread the word by liking us on our Facebook page and following us on X. Both of these can be accessed at the bottom of the page.</p>
+    </div>
+
+</section>
