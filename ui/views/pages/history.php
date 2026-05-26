@@ -9,11 +9,12 @@
             <?php foreach ($HISTORY_ITEMS as $idx => $item): ?>
                 <?php $idx++; ?>
 
-                <li class="px-(--px) group py-4 md:py-8 xl:py-12 md:gap-8 xl:gap-12 md:flex odd:bg-gray-100/75 md:items-start">
-                    <div class="mb-6 md:mb-0 md:basis-2/3 <?= $idx % 2 !== 0 ? 'md:order-2' : '' ?>">
-                        <h3 class="mb-4 md:mb-6 xl:mb-10"><?= $item['title'] ?? '' ?></h3>
-                        <p class="text-gray-800 text-balance"><?= $item['description'] ?? '' ?></p>
-                    </div>
+                <li class="px-(--px) group py-4 md:py-8 xl:py-12 md:gap-8 group xl:gap-12 md:flex odd:bg-gray-100/75 md:items-start">
+                    <?= component('ui/info-tile', [
+                        'class'    => "mb-6 md:mb-0 md:basis-2/3 group-odd:md:order-2",
+                        'title'     => $item['title'],
+                        'description'     => $item['description'],
+                    ]) ?>
 
                     <?= component('ui/adaptive-img', [
                         'sizes'    => 'mb|tb',
