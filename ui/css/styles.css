@@ -52,9 +52,31 @@
     /* --color-ring: var(--ring); */
 
     --animate-loading: loading 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
     @keyframes loading {
         50% {
             opacity: 0.1;
+        }
+    }
+
+    --animate-slide-in: slide-in 250ms cubic-bezier(0.4, 0, 0.6, 1);
+
+    @keyframes slide-in {
+        from {
+            transform: translateX(100%);
+        }
+    }
+
+    --animate-slide-out: slide-out 250ms cubic-bezier(0.4, 0, 0.6, 1);
+
+    @keyframes slide-out {
+        from {
+            display: block;
+            transform: translateX(0%);
+        }
+        to {
+            display: none;
+            transform: translateX(100%);
         }
     }
 }
@@ -78,7 +100,6 @@
 @layer base {
     html {
         @apply has-[#nav-popup[open]]:overflow-hidden;
-
     }
 
     body {
@@ -116,6 +137,37 @@
 
 #nav-popup {
     border-end-start-radius: calc(sign(100cqi - 100%) * 0.75rem);
+    opacity: 0;
+    transform: translateX(100%);
+    transition-property: overlay display opacity tranform;
+    transition-duration: 0.5s;
+    transition-behavior: allow-discrete;
+}
+
+#nav-popup[open] {
+    transform: translateX(0%);
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+#nav-popup::backdrop {
+    transition-property: opacity display overlay;
+    transition-duration: 0.5s;
+    transition-behavior: allow-discrete;
+    opacity: 0;
+}
+#nav-popup[open]::backdrop {
+    opacity: 1;
+}
+
+@starting-style {
+    #nav-popup[open]::backdrop {
+        opacity: 0;
+    }
 }
 
 .full-bleed-wrapper {
