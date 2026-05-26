@@ -3,6 +3,7 @@ $nav_links = [
     ['url' => '/', 'label' => 'Home'],
     ['url' => '/history', 'label' => 'History'],
     ['url' => '/memberships', 'label' => 'Memberships'],
+    ['url' => '/volunteers', 'label' => 'Volunteers'],
     ['url' => '/donate', 'label' => 'Donate'],
 ]; ?>
 

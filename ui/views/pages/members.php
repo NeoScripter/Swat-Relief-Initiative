@@ -11,21 +11,22 @@ $docs = [
 
 <section class="app-section">
     <div class="bg-gray-100/75 mx-auto w-fit rounded-md p-[calc(var(--py)/2)]">
-        <ul class="space-y-3 text-balance xl:space-y-4">
-            <?php foreach ($docs as $doc) : ?>
-                <li>
-                    <a
-                        href="<?= $doc['url'] ?>"
-                        target="_blank"
-                        class="font-medium block transition-colors hover:text-accent hover:motion-safe:animate-jump">
-                        <span class="translate-y-1 mr-0.5 inline-block">
-                            <?php include(APP_DIR . '/public/assets/svgs/download-file.svg'); ?>
-                        </span>
-                        <?= $doc['label'] ?>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-
+        <?php if (isset($docs) && ! empty($docs)) : ?>
+            <ul class="space-y-3 text-balance xl:space-y-4">
+                <?php foreach ($docs as $doc) : ?>
+                    <li>
+                        <a
+                            href="<?= $doc['url'] ?>"
+                            target="_blank"
+                            class="font-medium block transition-colors hover:text-accent hover:motion-safe:animate-jump">
+                            <span class="translate-y-1 mr-0.5 inline-block">
+                                <?php include(APP_DIR . '/public/assets/svgs/download-file.svg'); ?>
+                            </span>
+                            <?= $doc['label'] ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
     </div>
 </section>
