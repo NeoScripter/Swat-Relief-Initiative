@@ -13,7 +13,7 @@
                                 <?php foreach ($item['links'] as $link): ?>
                                     <li class="text-balance">
                                         <?php if (isset($link['url'])) : ?>
-                                            <a class="hover:underline underline-offset-4" href="<?= $link['url'] ?>">
+                                            <a class="hover:underline hover:motion-safe:animate-jump block underline-offset-4" href="<?= $link['url'] ?>">
                                                 <?= $link['label'] ?>
                                             </a>
                                         <?php else: ?>

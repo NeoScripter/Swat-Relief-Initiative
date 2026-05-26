@@ -17,7 +17,7 @@ $docs = [
                     <a
                         href="<?= $doc['url'] ?>"
                         target="_blank"
-                        class="font-medium block transition-colors hover:text-accent hover:animate-jump">
+                        class="font-medium block transition-colors hover:text-accent hover:motion-safe:animate-jump">
                         <span class="translate-y-1 mr-0.5 inline-block">
                             <?php include(APP_DIR . '/public/assets/svgs/download-file.svg'); ?>
                         </span>
