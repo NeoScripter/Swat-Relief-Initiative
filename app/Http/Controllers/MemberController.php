@@ -11,6 +11,7 @@ class MemberController
         $f3->set('inc', 'pages/members');
         $f3->set('SHOW_BANNER', true);
         $f3->set('heading', 'Memberships');
+        $f3->set('title', 'Memberships');
         echo view('layouts/user-layout');
     }
 }

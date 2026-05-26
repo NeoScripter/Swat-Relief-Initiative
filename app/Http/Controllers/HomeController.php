@@ -11,6 +11,7 @@ class HomeController
         $f3->set('inc', 'pages/home');
         $f3->set('SHOW_BANNER', true);
         $f3->set('heading', 'SRI');
+        $f3->set('title', 'Home');
         echo view('layouts/user-layout');
     }
 }

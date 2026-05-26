@@ -9,7 +9,8 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0" />
     <?= vite_tags() ?>
-    <title><?= $title ?? $app_name ?></title>
+    <link rel="icon" href="/favicon.webp" type="image/webp">
+    <title><?= "Swat Relief Initiative" . (isset($title) ? " - {$title}" : '') ?></title>
 </head>
 
 <body class="overflow-x-clip min-h-screen font-sans max-w-480 mx-auto">

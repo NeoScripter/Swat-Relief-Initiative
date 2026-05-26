@@ -10,6 +10,7 @@ class DonateController
     {
         $f3->set('inc', 'pages/donate');
         $f3->set('heading', 'Donate');
+        $f3->set('title', 'Donate');
         echo view('layouts/user-layout');
     }
 }
