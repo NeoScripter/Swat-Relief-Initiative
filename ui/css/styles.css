@@ -60,6 +60,19 @@
         }
     }
 
+    --animate-jump: jump 0.15s ease-in-out forwards;
+
+    @keyframes jump {
+        0% {
+            transform: none;
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+        50% {
+            transform: translateY(-7%);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+    }
+
     --animate-slide-in: slide-in 250ms cubic-bezier(0.4, 0, 0.6, 1);
 
     @keyframes slide-in {
@@ -345,3 +358,4 @@
     --button-fill-stop: 0%;
     --button-fill: transparent;
 }
+

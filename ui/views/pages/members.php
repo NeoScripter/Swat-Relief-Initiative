@@ -14,11 +14,11 @@ $docs = [
         <ul class="space-y-3 text-balance xl:space-y-4">
             <?php foreach ($docs as $doc) : ?>
                 <li>
-                <a 
-                    href="<?= $doc['url'] ?>" 
-                    target="_blank"
-                    class="font-medium"
-                >
+                    <a
+                        href="<?= $doc['url'] ?>"
+                        target="_blank"
+                        class="font-medium block hover:animate-jump">
+                        <span class="translate-y-1 mr-0.5 inline-block before:content-[url(/assets/svgs/download-file.svg)]"></span>
                         <?= $doc['label'] ?>
                     </a>
                 </li>
