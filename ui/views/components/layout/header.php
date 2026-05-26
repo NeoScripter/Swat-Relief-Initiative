@@ -1,4 +1,4 @@
-<header class="bg-nav text-white px-(--px) pt-3 flex items-center gap-4 md:gap-6 lg:gap-8 xl:gap-10 justify-between">
+<header class="bg-nav text-white px-(--px) xl:px-[calc(var(--px)/2)] pt-3 flex items-center gap-4 md:gap-6 lg:gap-8 xl:gap-10 justify-between">
     <?= component('ui/adaptive-img', [
         'sizes'    => 'mb',
         'avif'     => true,
