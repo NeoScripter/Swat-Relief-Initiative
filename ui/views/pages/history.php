@@ -1,6 +1,5 @@
 <section class="app-section pb-0">
     <h2>History of <span class="text-accent">Swat & SRI</span></h2>
-
 </section>
 
 <section class="app-section full-bleed">
